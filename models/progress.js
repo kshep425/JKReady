@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    console.log('Create Progress table')
+    console.log('Create Progress Table')
     var Progress = sequelize.define("Progress", {
         level: DataTypes.STRING,
         question: {
@@ -10,17 +10,21 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+
         wrong_answer_1: DataTypes.STRING,
         wrong_answer_2: DataTypes.STRING,
+        // point value for question
         points: {
             type: DataTypes.INTEGER,
             defaultValue: 5,
             allowNull: false
         },
-        prev_question: {
+        //id for previous question
+        prev_question_id: {
             type: DataTypes.INTEGER,
         },
-        next_question: {
+        //id for next question
+        next_question_id: {
             type: DataTypes.INTEGER,
         }
     });

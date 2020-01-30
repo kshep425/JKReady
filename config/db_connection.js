@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 
 function initialize_db(db_obj){
-    console.log(db_obj)
     const db_name = db_obj.database;
     const username = db_obj.username;
     const password = db_obj.password;

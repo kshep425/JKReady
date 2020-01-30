@@ -15,7 +15,6 @@ const db_obj = {
     password: process.env.DB_PW,
     host: process.env.DB_HOST || "localhost"
 }
-console.log(db_obj)
 
 const sequelize = initialize_db(db_obj)
 
@@ -30,7 +29,6 @@ fs
   });
 
 Object.keys(db).forEach(modelName => {
-    console.log("model Name: " + modelName)
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
