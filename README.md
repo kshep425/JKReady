@@ -36,3 +36,7 @@ These are the steps to run this locally on your machine
     ```
         node server.js
     ```
+    or use
+    ```
+        npm start
+    ```
