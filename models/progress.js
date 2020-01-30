@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+    console.log('Create Progress table')
   var Progress = sequelize.define("Progress", {
     level: DataTypes.STRING,
     question: {
@@ -17,17 +18,23 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
     },
     prev_question: {
-        references: {
-            model: Progress,
-            key: 'id'
-        }
+        type: DataTypes.INTEGER,
+        // references: {
+        //     model: Progress,
+        //     key: 'id'
+        // }
     },
     next_question: {
-        references: {
-            model: Progress,
-            key: 'id'
-        }
-    }
-  });
+        type: DataTypes.INTEGER,
+        // references: {
+        //     model: Progress,
+        //     key: 'id'
+        // }
+     }
+});
+
+  Progress.associate = function(models) {
+    models.Progress.hasMany(models.Users);
+  }
   return Progress;
 };
