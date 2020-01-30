@@ -4,6 +4,7 @@
   "description": "\"Game for Learning HTML and CSS\"",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jest": "^25.1.0",
