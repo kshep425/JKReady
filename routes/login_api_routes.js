@@ -28,6 +28,12 @@ module.exports = function(app){
         db.Users.create({
             username: req.body.username,
             password: req.body.password
+        }).then(function(users_response){
+            console.log(users_response.dataValues.id)
+            db.Scores.create({
+                score: 0,
+                UserId: users_response.dataValues.id
+            })
         })
         .then(function () {
             res.redirect(307, "/api/login");
@@ -40,7 +46,8 @@ module.exports = function(app){
     // Route for logging user out
     app.get("/logout", function (req, res) {
         req.logout();
-        res.redirect(307, "/api/login");
+        res.send("You have logged out")
+        //res.redirect(307, "/api/login");
     });
 
     // Route for getting some data about our user to be used client side
@@ -49,12 +56,21 @@ module.exports = function(app){
             // The user is not logged in, send back an empty object
             res.json({});
         } else {
-            // Otherwise send back the user's username and id
+            // Otherwise send back the user's username and id, progressId, and score
             // Sending back a password, even a hashed password, isn't a good idea
-            res.json({
-                username: req.user.username,
-                id: req.user.id
-            });
+            db.Scores.findOne({
+                where:{
+                    UserId: req.user.id
+                },
+                include: db.Users
+            }).then(function(scores){
+                res.json({
+                    username: req.user.username,
+                    id: req.user.id,
+                    ProgressId: req.user.ProgressId,
+                    score: scores.score
+                });
+            })
         }
     });
 }
