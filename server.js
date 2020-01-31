@@ -37,10 +37,12 @@ app.use(passport.session());
 //const api_routes = require("./routes/api_routes")
 //app.use(api_routes);
 require("./routes/login_api_routes")(app)
+require("./routes/game_api_routes")(app)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({force: true}).then(function() {
+//db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
