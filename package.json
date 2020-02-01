@@ -8,6 +8,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "html": "^1.0.0",
     "jest": "^25.1.0",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
