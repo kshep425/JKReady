@@ -19,6 +19,66 @@ app.use(express.json());
 // For player number
 let i = 1;
 
+function get_user_score(id) {
+    return db.Scores.findOne(
+        {
+            where:
+            {
+                UserId: id
+            },
+            include: db.Users
+        }
+    )
+}
+
+function increment_user_score(id, score) {
+    return db.Scores.increment(
+        {
+            score: score,
+        },
+        {
+            where: {
+                UserId: id
+            }
+        }
+    )
+}
+
+function get_all_scores(){
+    return db.Scores.findAll({
+        include: [db.Users],
+        limit: 10
+    })
+}
+
+function get_progress_table() {
+    return db.Progress.findAll({})
+}
+
+function get_question_by_id(progress_id) {
+    return db.Progress.findOne({
+        where: {
+            id: progress_id
+        }
+    })
+}
+
+function get_user_data(user_id) {
+    db.Users.findOne({
+        where: {
+            id: user_id,
+        },
+        include: [db.Progress]
+    })
+}
+
+function must_login() {
+    const m = { type: "Error", message: "User must login or create account" }
+    console.log(m.message)
+    return m;
+}
+
+
 module.exports = function (app) {
 
     // Get User Score
@@ -26,87 +86,128 @@ module.exports = function (app) {
         console.log("Get User Score")
         // console.log(!req.user)
         if (req.user) {
-            db.Scores.findOne({
-                where: {
-                    UserId: req.user.id
-                },
-                include: db.Users
-            }).then(function (scores) {
-                res.json({
-                    score: scores.score
+            get_user_score(req.user.id)
+                .then(function (scores) {
+                    res.json({
+                        score: scores.score
+                    })
                 })
-            })
         }
         else {
-            res.send("Login or Create an Account")
-            //res.redirect(307,"/api/login")
-        } // if req.user doesn't exist
+            res.json(must_login())
+        }
     })
 
     // Update User Score
-    app.put("/api/user_score", function(req, res){
+    app.put("/api/user_score", function (req, res) {
         console.log("API Put User Score")
         if (req.user) {
             console.log(`Increment score by ${req.body.score}`)
-            db.Scores.increment(
-                {
-                    score:  req.body.score,
-                 }, {
-                    where: {
-                        UserId: req.user.id
-                    }
-                }
-            ).then((response)=>{
-                console.log(response.dataValues);
-                res.send("Score Updated")
-            })
-        } else {
-            res.send("Login or Create an Account")
-        }
+            increment_user_score(req.user.id, req.body.score)
+                .then(() => {
+                    get_user_score(req.user.id)
+                        .then(function (scores) {
+                            res.json({
+                                score: scores.score
+                            })
+                        })
+                })
 
+        } else {
+            res.json(must_login())
+        }
     })
 
+    //Get all user scores
+    app.get("/api/scores", function (req, res) {
+        console.log("Get all scores");
+        if (req.user) {
+            get_all_scores()
+                .then(function (scores) {
+
+                    let s = scores.map(score => {
+                        return {
+                            username: score.User.username,
+                            score: score.score
+                        }
+                    })
+                    res.json(s)
+                })
+        } else {
+            res.json(must_login())
+        }
+    })
+
+    // Get Progress info
+    app.get("/api/questions", function (req, res) {
+        console.log("Get all questions from progresses table")
+        get_progress_table()
+            .then(function (result) {
+                if (result) {
+
+                    console.log(result)
+                    res.json(result)
+                } else {
+                    console.log("Questions Do Not Exist")
+                    res.json({ type: "Error", message: "Questions Do Not Exist" })
+                }
+            })
+    })
+
+    // Get a question based on progress id
+    app.get("/api/questions/:id", function (req, res) {
+        console.log("Get question based on progress id")
+        get_question_by_id(req.params.id)
+            .then(function (result) {
+                if (result) {
+                    console.log(result)
+                    res.json(result)
+
+                } else {
+                    console.log("Question ID does not Exist")
+                    res.json({ type: "Error", message: "Question ID Does not Exist" })
+                }
+            })
+    })
+
+    // Set information for a user
+    // * The progress id represents the question they are currently on
+    app.put("/api/user_data", function (req, res) {
+        console.log("Update user's information")
+        if (req.user) {
+
+            db.Users.update(req.body, {
+                where: { id: req.user.id }
+            }).then(function (result) {
+                console.log(result)
+                get_user_data(req.user.id)
+                    .then(function (result) {
+                        console.log(result)
+                        res.json(result)
+                    })
+            })
+        } else {
+            console.log(must_login().message)
+            res.json(must_login())
+        }
+    })
+
+    // Get all of the current user's data
+    app.get("/api/user_data", function (req, res) {
+        console.log("Get user's information")
+        if (req.user) {
+            get_user_score(req.user.id)
+                .then(function (scores) {
+                    res.json({
+                        username: req.user.username,
+                        id: req.user.id,
+                        ProgressId: req.user.ProgressId,
+                        score: scores.score
+                    });
+                })
+        } else {
+            res.json(must_login())
+        }
+    })
 
 }
-
-
-
-    // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-    // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-    // otherwise send back an error
-    // app.post("/api/signup", function (req, res) {
-    //     db.Users.create({
-    //         username: req.body.username,
-    //         password: req.body.password
-    //     })
-    //     .then(function () {
-    //         res.redirect(307, "/api/login");
-    //     })
-    //     .catch(function (err) {
-    //         res.status(401).json(err);
-    //     });
-    // });
-
-    // // Route for logging user out
-    // app.get("/logout", function (req, res) {
-    //     req.logout();
-    //     res.redirect(307, "/api/login");
-    // });
-
-    // // Route for getting some data about our user to be used client side
-    // app.get("/api/user_data", function (req, res) {
-    //     if (!req.user) {
-    //         // The user is not logged in, send back an empty object
-    //         res.json({});
-    //     } else {
-    //         // Otherwise send back the user's username and id
-    //         // Sending back a password, even a hashed password, isn't a good idea
-    //         res.json({
-    //             username: req.user.username,
-    //             id: req.user.id
-    //         });
-    //     }
-    // });
-//}
-
-// module.exports = app
