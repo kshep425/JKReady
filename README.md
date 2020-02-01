@@ -1,7 +1,8 @@
-# JKReady
+# Rabbit The Fixer
+By JKReady
 
 ## Description
-This game will allow users to fix the sprites world, by changing html and css files.
+Help Rabbit the Fixer to restore worlds back to their good state, by changing html and css files ruined by an evildoer!
 
 Open the game here: [https://rabbit-the-fixer.herokuapp.com/](https://rabbit-the-fixer.herokuapp.com/)
 
