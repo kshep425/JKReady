@@ -3,12 +3,14 @@
 ## Description
 This game will allow users to fix the sprites world, by changing html and css files.
 
+Open the game here: [https://rabbit-the-fixer.herokuapp.com/](https://rabbit-the-fixer.herokuapp.com/)
+
 ## Authors
-* [Keisha Shepherd](https://github.com/kshep425)
+* [Keisha Shepherd - kshep425](https://github.com/kshep425)
 
-* [Jennifer Genes](https://github.com/JenG1)
+* [Jennifer Genes - JenG1](https://github.com/JenG1)
 
-* [Robin Jones](https://github.com/Rmj22)
+* [Robin Jones - Rmj22](https://github.com/Rmj22)
 
 ## Usage
 These are the steps to run this locally on your machine
