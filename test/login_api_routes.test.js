@@ -4,7 +4,9 @@ const session = require("express-session");
 const passport = require("../config/passport");
 const initialize_connection = require("../config/db_connection");
 const db_obj = require("../config/db_config")
-const serialize = initialize_connection(db_obj);
+const sequelize = initialize_connection(db_obj);
+const Sequelize = require("sequelize");
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -14,12 +16,22 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 require("../routes/login_api_routes")(app)
-let i = 1000;
+let i = 2000;
+
+const db = require("../models")
+
 // console.log(db_obj)
 describe("Login Tests", () => {
     beforeAll((cb)=>{
+
         initialize_connection(db_obj);
-        cb();
+        db.Users.destroy({
+            where: {
+                ProgressId: null
+                //username: { [Sequelize.Op.contains]: "test"}
+             }
+        }).then(()=>cb())
+
     })
 
     beforeEach(()=>{
@@ -31,12 +43,12 @@ describe("Login Tests", () => {
         request(app)
         .post("/api/login")
         .send({username: "unknown", password: "unknown"})
-        .expect(401, done)
+        .expect(401,/Unauthorized/, done)
     })
 
 
     it('/api/signup/ allows new user to be created',(done)=>{
-        const username = "new_user_" + i
+        const username = "test_user_" + i
         console.log(username)
         const password = "password_" + i
         request(app)
@@ -46,7 +58,7 @@ describe("Login Tests", () => {
     })
 
     it('/api/signup/ does not allow duplicate users to be created', (done)=>{
-        const username = "new_user_" + i
+        const username = "test_user_" + i
         console.log(username)
         const password = "password_" + i
         request(app)
@@ -63,7 +75,7 @@ describe("Login Tests", () => {
     })
 
     it('/api/login/ allows user to login', (done)=>{
-        const username = "new_user_" + i
+        const username = "test_user_" + i
         console.log(username)
         const password = "password_" + i
         request(app)
@@ -80,7 +92,7 @@ describe("Login Tests", () => {
     })
 
     it('/api/login/ allows user to login and logout', (done)=>{
-        const username = "new_user_" + i
+        const username = "test_user_" + i
         console.log(username)
         const password = "password_" + i
         request(app)
