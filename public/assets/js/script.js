@@ -1,0 +1,56 @@
+let animationInterval;
+// let widthOfSpriteSheet = 168;
+// let widthOfEachSprite = 56;
+
+function stopAnimation() {
+  clearInterval(animationInterval);
+}
+
+function startAnimation() {
+  let widthOfSpriteSheet = 168;
+  let widthOfEachSprite = 56;
+
+  let position = widthOfEachSprite; //start position for the image
+  let speed = 200; //in millisecond(ms)
+  let diff = widthOfEachSprite; //difference between two sprites
+
+  animationInterval = setInterval(() => {
+    var spriteSheet = document.getElementById("sprite-image");
+    spriteSheet.style.backgroundPosition = `-${position}px 0px`;
+
+    if (position < widthOfSpriteSheet) {
+      position = position + diff;
+    } else {
+      //increment the position by the width of each sprite each time
+      position = widthOfEachSprite;
+    }
+    //reset the position to show first sprite after the last one
+  }, speed);
+}
+
+function hero_start_animation() {
+  let widthOfSpriteSheet = 448;
+  let widthOfEachSprite = 56;
+
+  let position = widthOfEachSprite; //start position for the image
+  let speed = 200; //in millisecond(ms)
+  let diff = widthOfEachSprite; //difference between two sprites
+
+  animationInterval = setInterval(() => {
+    var spriteSheet = document.getElementById("hero-sprite-image");
+    spriteSheet.style.backgroundPosition = `-${position}px 0px`;
+
+    if (position < widthOfSpriteSheet) {
+      position = position + diff;
+    } else {
+      //increment the position by the width of each sprite each time
+      position = widthOfEachSprite;
+    }
+    //reset the position to show first sprite after the last one
+  }, speed);
+}
+
+
+//Start animation
+startAnimation();
+hero_start_animation();
