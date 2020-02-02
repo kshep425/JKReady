@@ -33,14 +33,14 @@ describe("Game Tests", () => {
         it('GET /api/user_score/ should return "Login or Create Account" when not logged in', (done) => {
             request(app)
                 .get("/api/user_score")
-                .expect(200, /Login or Create an Account/, done)
+                .expect(200, /{"type":"Error","message":"User must login or create account"}/, done)
         })
 
         it('PUT /api/user_score/ should return "Login or Create Account" when not logged in', (done) => {
             request(app)
                 .put("/api/user_score")
                 .send({ score: 5 })
-                .expect(200, /Login or Create an Account/, done)
+                .expect(200, /{"type":"Error","message":"User must login or create account"}/, done)
         })
     })
 
