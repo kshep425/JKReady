@@ -1,32 +1,17 @@
 const request = require("supertest")
-const express = require("express");
-const session = require("express-session");
-const passport = require("../config/passport");
-const initialize_connection = require("../config/db_connection");
-const db_obj = require("../config/db_config")
-const serialize = initialize_connection(db_obj);
-const app = express();
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static("public"));
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
-require("../routes/game_api_routes")(app)
-require("../routes/login_api_routes")(app)
+const app = require("../server")
 let i = 2000;
-// console.log(db_obj)
-describe("Game Tests", () => {
-    beforeAll((cb) => {
-        initialize_connection(db_obj);
-        cb();
-    })
 
+describe("Game Tests", () => {
     beforeEach(() => {
-        // i = Math.floor((Math.random() + 1) * 1000)
         i++;
     })
+
+    // afterAll(async (cb)=>{
+    //     await app.close()
+    //     await console.log("Game Route - App Closed")
+    //     await cb()
+    // })
 
     describe("WHEN Not Logged IN", () => {
 
