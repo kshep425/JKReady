@@ -180,10 +180,14 @@ module.exports = function (app) {
                 where: { id: req.user.id }
             }).then(function (result) {
                 console.log(result)
-                get_user_data(req.user.id)
-                    .then(function (result) {
-                        console.log(result)
-                        res.json(result)
+                get_user_score(req.user.id)
+                    .then(function (scores) {
+                        res.json({
+                            username: req.user.username,
+                            id: req.user.id,
+                            ProgressId: req.user.ProgressId,
+                            score: scores.score
+                        });
                     })
             })
         } else {
