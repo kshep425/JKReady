@@ -5,7 +5,7 @@ const passport = require("../config/passport");
 const initialize_connection = require("../config/db_connection");
 const db_obj = require("../config/db_config")
 const sequelize = initialize_connection(db_obj);
-const Sequelize = require("sequelize");
+const {Op} = require("sequelize");
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 require("../routes/login_api_routes")(app)
-let i = 2000;
+let i = 3000;
 
 const db = require("../models")
 
@@ -27,10 +27,15 @@ describe("Login Tests", () => {
         initialize_connection(db_obj);
         db.Users.destroy({
             where: {
-                ProgressId: null
-                //username: { [Sequelize.Op.contains]: "test"}
+                username: {[Op.startsWith]: 'test'}
              }
-        }).then(()=>cb())
+        }).then(function(){
+            Console.log('Removed test users')
+            cb()
+        }).catch(function(err){
+            console.log(err)
+            cb()
+        })
 
     })
 
