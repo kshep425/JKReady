@@ -1,7 +1,7 @@
 {
 	"textures": [
 		{
-			"image": "bad_guy-0.png",
+			"image": "villian_celebrate",
 			"format": "RGBA8888",
 			"size": {
 				"w": 431,
@@ -10,7 +10,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "0_Reaper_Man_Walking_000.png",
+					"filename": "villian_celebrate.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -33,7 +33,7 @@
 			]
 		},
 		{
-			"image": "bad_guy-1.png",
+			"image": "graffiti.png",
 			"format": "RGBA8888",
 			"size": {
 				"w": 431,
@@ -42,7 +42,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "0_Reaper_Man_Walking_001.png",
+					"filename": "graffiti.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -65,7 +65,7 @@
 			]
 		},
 		{
-			"image": "bad_guy-2.png",
+			"image": "hero_idle.png",
 			"format": "RGBA8888",
 			"size": {
 				"w": 431,
@@ -74,7 +74,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "0_Reaper_Man_Walking_002.png",
+					"filename": "hero_idle.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -97,7 +97,7 @@
 			]
 		},
 		{
-			"image": "bad_guy-3.png",
+			"image": "villian_defeat.png",
 			"format": "RGBA8888",
 			"size": {
 				"w": 431,
@@ -106,7 +106,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "0_Reaper_Man_Walking_003.png",
+					"filename": "villian_defeat.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -129,7 +129,7 @@
 			]
 		},
 		{
-			"image": "bad_guy-4.png",
+			"image": "villian_kick.png",
 			"format": "RGBA8888",
 			"size": {
 				"w": 430,
@@ -138,7 +138,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "0_Reaper_Man_Walking_004.png",
+					"filename": "villian_kick.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -161,7 +161,7 @@
 			]
 		},
 		{
-			"image": "bad_guy-5.png",
+			"image": "villian_idle.png",
 			"format": "RGBA8888",
 			"size": {
 				"w": 429,
@@ -170,7 +170,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "0_Reaper_Man_Walking_005.png",
+					"filename": "villian_idle.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -188,586 +188,11 @@
 						"y": 0,
 						"w": 429,
 						"h": 584
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-6.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 584
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_006.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 584
-					},
-					"spriteSourceSize": {
-						"x": 215,
-						"y": 167,
-						"w": 430,
-						"h": 584
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 584
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-7.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 583
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_007.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 583
-					},
-					"spriteSourceSize": {
-						"x": 214,
-						"y": 169,
-						"w": 430,
-						"h": 583
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 583
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-8.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 431,
-				"h": 583
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_008.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 431,
-						"h": 583
-					},
-					"spriteSourceSize": {
-						"x": 214,
-						"y": 170,
-						"w": 431,
-						"h": 583
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 431,
-						"h": 583
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-9.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 583
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_009.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 583
-					},
-					"spriteSourceSize": {
-						"x": 221,
-						"y": 171,
-						"w": 430,
-						"h": 583
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 583
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-10.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 584
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_010.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 584
-					},
-					"spriteSourceSize": {
-						"x": 227,
-						"y": 172,
-						"w": 430,
-						"h": 584
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 584
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-11.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 584
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_011.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 584
-					},
-					"spriteSourceSize": {
-						"x": 232,
-						"y": 174,
-						"w": 430,
-						"h": 584
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 584
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-12.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 431,
-				"h": 585
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_012.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 431,
-						"h": 585
-					},
-					"spriteSourceSize": {
-						"x": 237,
-						"y": 175,
-						"w": 431,
-						"h": 585
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 431,
-						"h": 585
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-13.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 431,
-				"h": 586
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_013.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 431,
-						"h": 586
-					},
-					"spriteSourceSize": {
-						"x": 238,
-						"y": 174,
-						"w": 431,
-						"h": 586
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 431,
-						"h": 586
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-14.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 431,
-				"h": 585
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_014.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 431,
-						"h": 585
-					},
-					"spriteSourceSize": {
-						"x": 237,
-						"y": 173,
-						"w": 431,
-						"h": 585
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 431,
-						"h": 585
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-15.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 431,
-				"h": 586
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_015.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 431,
-						"h": 586
-					},
-					"spriteSourceSize": {
-						"x": 232,
-						"y": 171,
-						"w": 431,
-						"h": 586
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 431,
-						"h": 586
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-16.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 585
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_016.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 585
-					},
-					"spriteSourceSize": {
-						"x": 227,
-						"y": 170,
-						"w": 430,
-						"h": 585
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 585
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-17.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 585
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_017.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 585
-					},
-					"spriteSourceSize": {
-						"x": 222,
-						"y": 169,
-						"w": 430,
-						"h": 585
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 585
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-18.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 585
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_018.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 585
-					},
-					"spriteSourceSize": {
-						"x": 216,
-						"y": 168,
-						"w": 430,
-						"h": 585
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 585
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-19.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 584
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_019.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 584
-					},
-					"spriteSourceSize": {
-						"x": 214,
-						"y": 169,
-						"w": 430,
-						"h": 584
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 584
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-20.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 582
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_020.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 582
-					},
-					"spriteSourceSize": {
-						"x": 213,
-						"y": 171,
-						"w": 430,
-						"h": 582
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 582
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-21.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 581
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_021.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 581
-					},
-					"spriteSourceSize": {
-						"x": 219,
-						"y": 172,
-						"w": 430,
-						"h": 581
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 581
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-22.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 473,
-				"h": 640
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_022.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 473,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 247,
-						"y": 190,
-						"w": 473,
-						"h": 640
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 473,
-						"h": 640
-					}
-				}
-			]
-		},
-		{
-			"image": "bad_guy-23.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 430,
-				"h": 581
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "0_Reaper_Man_Walking_023.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 430,
-						"h": 581
-					},
-					"spriteSourceSize": {
-						"x": 230,
-						"y": 174,
-						"w": 430,
-						"h": 581
-					},
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 430,
-						"h": 581
 					}
 				}
 			]
 		}
+		
 	],
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
