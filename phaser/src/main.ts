@@ -1,6 +1,6 @@
 // ** @type {import("../typings/phaser")} */
 
-import { LoadScene } from "./assets/images/fixed_image_1.jpg";
+import { LoadScene } from "..\assets\images\fixed_image_1.jpg_";
 import { MenuScene } from "./scenes/MenuScene";
 import { PlayScene } from "./scenes/PlayScene";
 let game = new Phaser.Game({
