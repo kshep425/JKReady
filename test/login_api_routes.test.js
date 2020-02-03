@@ -30,7 +30,7 @@ describe("Login Tests", () => {
                 username: {[Op.startsWith]: 'test'}
              }
         }).then(function(){
-            Console.log('Removed test users')
+            console.log('Removed test users')
             cb()
         }).catch(function(err){
             console.log(err)
@@ -114,7 +114,7 @@ describe("Login Tests", () => {
 
                 request(app)
                 .get("/api/logout")
-                .expect(404,done)
+                .expect(200,done)
             })
         })
     })
