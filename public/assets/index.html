@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <!-- <script src="https://use.fontawesome.com/5f07bda004.js"></script> -->
     <title>Rabbit The Fixer</title>
 </head>
@@ -16,7 +16,7 @@
     <section class="form-dark">
 
         <!--Form without header-->
-        <div class="card card-image" style="background-image: url('fixed_image_2.png'); width: 28rem;">
+        <div class="card card-image" style="background-image: url('fixed_image_2.png'); background-color:aquamarine;width: 28rem;">
             <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
                 <div id="hero-sprite-container">
                     <div id="hero-sprite-image">
@@ -34,39 +34,13 @@
                 </div>
 
                 <!--Body-->
-                <div class="md-form">
-                    <input type="text" id="username_input" class="form-control white-text border border-dark">
-                    <label for="username_input">Username</label>
-                </div>
+                <form id="logout_form">
+                    <button id="logout_button" type="submit">
+                        Log Out
+                    </button>
+                </form>
 
-                <div class="md-form pb-3">
-                    <input type="password" id="password_input" class="form-control white-text border border-dark">
-                    <label for="password_input">Your password</label>
-                    <div class="form-check my-4">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck17">
-                        <label class="form-check-label white-text" for="defaultCheck17">Accept the<a href="#"
-                                class="green-text font-weight-bold"> Terms and Conditions</a></label>
-                    </div>
-                </div>
 
-                <!--Grid row-->
-                <div class="row d-flex align-items-center mb-4">
-
-                    <!--Grid column-->
-                    <div class="text-center mb-3 col-md-12">
-                        <button type="button"
-                            class="btn btn-success btn-block btn-rounded z-depth-1 border border-dark">Sign in</button>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-
-                <!--Grid column-->
-                <div class="col-md-12">
-                    <p class="font-small white-text d-flex justify-content-end">Have an account? <a href="#"
-                            class="green-text ml-1 font-weight-bold"> Log in</a></p>
-                </div>
-                <!--Grid column-->
 
             </div>
         </div>
@@ -89,8 +63,8 @@
 		</form>
     </div> -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="script.js" type="application/javascript"></script>
-    <script src="login.js" type="application/javascript"></script>
+    <script src="assets/scripts/script.js" type="application/javascript"></script>
+    <script src="assets/scripts/login.js" type="application/javascript"></script>
 </body>
 
 </html>
