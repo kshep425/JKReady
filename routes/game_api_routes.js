@@ -78,6 +78,11 @@ function must_login() {
     return m;
 }
 
+function add_question(params){
+    console.log("create questions with these params:")
+    console.log(params)
+    return db.Progress.create(params)
+}
 
 module.exports = function (app) {
 
@@ -213,5 +218,18 @@ module.exports = function (app) {
             res.json(must_login())
         }
     })
+
+    app.post("/api/question", function(req, res){
+        console.log("Add Question to db")
+        if (req.user){
+            add_question(req.body)
+            .then(function(result){
+                console.log(result)
+                res.json(result)
+            })
+        } else {
+            res.json(must_login())
+        }
+    });
 
 }
