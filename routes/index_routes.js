@@ -41,10 +41,10 @@ module.exports = function (app) {
 
     app.get("/game", function (req, res) {
         // findAll returns all entries for a table when used with no options
-        db.Progresses.findAll({}).then(function (dbProgresses) {
-        let progress = dbProgresses;
+        db.Progress.findAll({}).then(function (dbProgress) {
+        let progress = dbProgress;
         console.log(progress);
-        res.render("dBprogress", progress)
+        res.render("progress", dbProgress)
         });
         // res.render("progress-block", progress)
     })
