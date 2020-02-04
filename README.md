@@ -1,8 +1,8 @@
-# Rabbit The Fixer
+# Foxy The Fixer
 By JKReady
 
 ## Description
-Help Rabbit the Fixer to restore worlds back to their good state, by changing html and css files ruined by an evildoer!
+Help Foxy the Fixer to restore worlds back to their good state, by changing html and css files ruined by an evildoer!
 
 Open the game here: [https://rabbit-the-fixer.herokuapp.com/](https://rabbit-the-fixer.herokuapp.com/)
 
