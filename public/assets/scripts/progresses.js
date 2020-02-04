@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  let $quiz_container = $(".quiz-container");
   hero_idle();
   function hero_idle() {
     let widthOfSpriteSheet = 448;
@@ -20,33 +21,29 @@ $(document).ready(function () {
       //reset the position to show first sprite after the last one
     }, speed);
   }
-
-    // blogContainer holds questions
-    let quiz_container = $(".quiz-container");
     // Click events for the edit and delete buttons
-    $(document).on("click", "next-question-button", nextQuestion);
-    $(document).on("click", "submit-button", handlePostEdit);
-    postCategorySelect.on("change", handleCategoryChange);
-    var posts;
-  
-    // This function grabs posts from the database and updates the view
-    function getPosts(category) {
-      var categoryString = category || "";
-      if (categoryString) {
-        categoryString = "/category/" + categoryString;
+    // $(document).on("click", "next-question-button", nextQuestion);
+    // $(document).on("click", "submit-button", handlePostEdit);
+    let questions = [];
+    get_questions();
+      // This function resets the questions displayed with new questions from the database
+    function initialize_rows() {
+      $quiz_container.empty();
+      var rowsToAdd = [];
+      for (var i = 0; i < questions.length; i++) {
+        rowsToAdd.push(createNewRow(questions[i]));
       }
-      $.get("/api/posts" + categoryString, function(data) {
-        console.log("Posts", data);
-        posts = data;
-        if (!posts || !posts.length) {
-          displayEmpty();
-        }
-        else {
-          initializeRows();
-        }
-      });
+      $quiz_container.prepend(rowsToAdd);
     }
+   // This function grabs questinos from the database and updates the questions view
+   function get_questions() {
+    $.get("/api/questions/:id", function(data) {
+      questions = data;
+      initialize_rows();
+      console.log(questions)
+    });
+  }
 });
 
-next_question();
-submit_button()
+// next_question();
+// submit_button()

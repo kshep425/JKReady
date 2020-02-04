@@ -7,4 +7,4 @@ const db_obj = {
     host: process.env.DB_HOST || "localhost"
 }
 
-module.exports = db_obj
+module.exports = db_obj;
