@@ -1,12 +1,11 @@
 $(document).ready(function () {
-
     let animationInterval;
     // let widthOfSpriteSheet = 168;
     // let widthOfEachSprite = 56;
 
-    function stop_animation() {
-        clearInterval(animationInterval);
-    }
+    // function stop_animation() {
+    //     clearInterval(animationInterval);
+    // }
 
     function villain_start_animation() {
         let widthOfSpriteSheet = 168;
@@ -52,10 +51,9 @@ $(document).ready(function () {
             //reset the position to show first sprite after the last one
         }, speed);
     }
-
-
-    //Start animation
-    villain_start_animation();
-    hero_start_animation();
+//Start animation
+villain_start_animation();
+hero_start_animation();
 
 });
+
