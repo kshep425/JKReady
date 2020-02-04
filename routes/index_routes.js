@@ -22,10 +22,10 @@ module.exports = function (app) {
             console.log("You are logged in as: " + req.user.username)
             let high_scores = { scores: [{ username: "test_username", score: "0" }] }
             console.log(high_scores)
-            res.render("index", high_scores)
+            res.render("high_scores", high_scores)
         } else {
             console.log("You need to login")
-            res.sendFile(path.join(__dirname, "/../public/assets/login.html"))
+            res.render("index")
         }
 
     })
@@ -48,7 +48,7 @@ module.exports = function (app) {
     app.get("/intro", function (req, res) {
         console.log("Start Game Introduction")
         if(req.user){
-            res.render("index", {username: req.body.username})
+            res.render("intro", {username: req.body.username})
         } else {
             console.log("You need to login")
             res.render("index")
