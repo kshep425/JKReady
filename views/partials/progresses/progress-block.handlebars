@@ -6,6 +6,14 @@
         </div>
         <div class="col-md-9">
             <div class="demo-content">
+                {{#each progress}}
+                <h2>{{progress.question}}!</h2>
+                <ul>
+                    <li>{{progress.correct_answer}}!</li>
+                    <li>{{progress.wrong_answer_1}}!</li>
+                    <li>{{progress.wrong_answer_2}}!</li>
+                </ul>
+                {{/each}}
                 <nav class="nav nav-pills nav-fill">
                     <a class="nav-item nav-link" href="#">Instructions</a>
                     <a class="nav-item nav-link" href="#">High Scores</a>

@@ -1,5 +1,19 @@
 $(document).ready(function () {
-  let $quiz_container = $(".quiz-container");
+  let questions = data;
+  function game(username, password) {
+    $.get("/game", function(data) {
+      initializeRows();
+      console.log(questions);
+    })
+        .then(function () {
+            window.location.replace("/");
+            // If there's an error, log the error
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+}
+
   hero_idle();
   function hero_idle() {
     let widthOfSpriteSheet = 448;
