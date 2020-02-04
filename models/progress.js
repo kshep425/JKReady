@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     console.log('Create Progress Table')
     var Progress = sequelize.define("Progress", {
-        level: DataTypes.STRING,
+        stage: DataTypes.STRING,
         question: {
             type: DataTypes.STRING,
             allowNull: false
