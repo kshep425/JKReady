@@ -1,5 +1,4 @@
 const request = require("supertest")
-// const app = require("../server")
 const db = require("../models")
 const { Op } = require("sequelize");
 
@@ -23,7 +22,6 @@ require("../routes/index_routes")(app)
 
 let i = 5000;
 
-// console.log(db_obj)
 describe("Game Tests", () => {
 
     beforeAll((cb) => {
@@ -44,9 +42,14 @@ describe("Game Tests", () => {
     })
 
     beforeEach(() => {
-        // i = Math.floor((Math.random() + 1) * 1000)
         i++;
     })
+
+    // afterAll(async (cb)=>{
+    //     await app.close()
+    //     await console.log("Game Route - App Closed")
+    //     await cb()
+    // })
 
     describe("WHEN Not Logged IN", () => {
 
@@ -70,9 +73,9 @@ describe("Game Tests", () => {
         })
     })
 
-    // describe("WHEN account created", () => {
+    describe("WHEN account created", () => {
 
-    it('GET /api/user_score/ should return current users score', (done) => {
+    xit('GET /api/user_score/ should return current users score', (done) => {
         const username = "test_user_" + i
         console.log(username)
         const password = "password_" + i
@@ -80,19 +83,24 @@ describe("Game Tests", () => {
 
 
         request(app)
+        //signup
             .post("/api/signup")
             .send({ username: username, password: password })
             .expect(307,
                 function (err, res) {
                     if (err) throw err;
-
+                    console.log(res)
 
                     request(app)
+                    //login
                         .post("/api/login")
                         .send({ username: username, password: password })
                         .expect(200,
-                            function () {
+                            function (err, res) {
+                                console.log(res)
+                                if (err) throw err;
                                 request(app)
+                                //get user score
                                     .get("/api/user_score")
                                     .expect(200, /{ score: 0 }/, done)
                             }
@@ -111,8 +119,5 @@ describe("Game Tests", () => {
     //             })
     //     })
     // })
-
-
-
-
+    })
 }); // describe

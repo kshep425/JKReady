@@ -1,0 +1,202 @@
+{
+	"textures": [
+		{
+			"image": "villian_celebrate",
+			"format": "RGBA8888",
+			"size": {
+				"w": 431,
+				"h": 581
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "villian_celebrate.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 431,
+						"h": 581
+					},
+					"spriteSourceSize": {
+						"x": 236,
+						"y": 176,
+						"w": 431,
+						"h": 581
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 431,
+						"h": 581
+					}
+				}
+			]
+		},
+		{
+			"image": "graffiti.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 431,
+				"h": 581
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "graffiti.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 431,
+						"h": 581
+					},
+					"spriteSourceSize": {
+						"x": 236,
+						"y": 174,
+						"w": 431,
+						"h": 581
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 431,
+						"h": 581
+					}
+				}
+			]
+		},
+		{
+			"image": "hero_idle.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 431,
+				"h": 582
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "hero_idle.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 431,
+						"h": 582
+					},
+					"spriteSourceSize": {
+						"x": 235,
+						"y": 173,
+						"w": 431,
+						"h": 582
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 431,
+						"h": 582
+					}
+				}
+			]
+		},
+		{
+			"image": "villian_defeat.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 431,
+				"h": 583
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "villian_defeat.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 431,
+						"h": 583
+					},
+					"spriteSourceSize": {
+						"x": 230,
+						"y": 171,
+						"w": 431,
+						"h": 583
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 431,
+						"h": 583
+					}
+				}
+			]
+		},
+		{
+			"image": "villian_kick.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 430,
+				"h": 583
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "villian_kick.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 430,
+						"h": 583
+					},
+					"spriteSourceSize": {
+						"x": 226,
+						"y": 170,
+						"w": 430,
+						"h": 583
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 430,
+						"h": 583
+					}
+				}
+			]
+		},
+		{
+			"image": "villian_idle.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 429,
+				"h": 584
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "villian_idle.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 429,
+						"h": 584
+					},
+					"spriteSourceSize": {
+						"x": 221,
+						"y": 168,
+						"w": 429,
+						"h": 584
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 429,
+						"h": 584
+					}
+				}
+			]
+		}
+		
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:3e49a860d1a5c3f419eb1cc1035c1e22:1f800d6eed56d96b3ba6644bc8b31f3d:c1861341a48f3d25f5d0a028e5425b39$"
+	}
+}

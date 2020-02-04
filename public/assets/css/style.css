@@ -1,0 +1,28 @@
+#villain-sprite-image {
+    height: 82px;
+    width: 56px;
+    position: absolute;
+    bottom: 390px;
+    left: 50px;
+    background: url("villain_idle.png")
+        0px 0px;
+}
+#hero-sprite-image {
+    height: 82px;
+    width: 56px;
+    position: absolute;
+    bottom: 395px;
+    left: 342px;
+    background: url("hero_idle.png")
+        0px 0px;
+
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+p {
+    color:black;
+}

@@ -44,35 +44,10 @@ module.exports = function(app){
     });
 
     // Route for logging user out
-    app.get("/logout", function (req, res) {
+    app.get("/api/logout", function (req, res) {
         req.logout();
         res.send("You have logged out")
         //res.redirect(307, "/api/login");
     });
 
-    // Route for getting some data about our user to be used client side
-    app.get("/api/user_data", function (req, res) {
-        if (!req.user) {
-            // The user is not logged in, send back an empty object
-            res.json({});
-        } else {
-            // Otherwise send back the user's username and id, progressId, and score
-            // Sending back a password, even a hashed password, isn't a good idea
-            db.Scores.findOne({
-                where:{
-                    UserId: req.user.id
-                },
-                include: db.Users
-            }).then(function(scores){
-                res.json({
-                    username: req.user.username,
-                    id: req.user.id,
-                    ProgressId: req.user.ProgressId,
-                    score: scores.score
-                });
-            })
-        }
-    });
 }
-
-// module.exports = app
