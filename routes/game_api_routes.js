@@ -200,7 +200,18 @@ module.exports = function (app) {
             res.json(must_login())
         }
     })
-
+    app.get("/game", function(req, res) {
+        console.log("View game")
+        if (req.user){
+            add_question(req.body)
+            .then(function(result){
+                console.log(result)
+                res.json(result)
+            })
+        } else {
+            res.json(must_login())
+        }
+    });
     // Get all of the current user's data
     app.get("/api/user_data", function (req, res) {
         console.log("Get user's information")

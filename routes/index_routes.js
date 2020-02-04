@@ -1,4 +1,3 @@
-
 const path = require("path");
 var db = require("../models");
 
@@ -29,5 +28,19 @@ module.exports = function (app) {
         }
 
     })
+    app.get("/game", function (req,res){
+        console.log("Open Game Page")
+        if (req.user) {
+            console.log("You are logged in as: " + req.user.username)
+            let questions = {progress: [{question: "test_question", correct_answer: "Yes",wrong_answer_1:"No",wrong_asnwer_2:"Maybe"}]}
+            console.log(questions)
+            res.render("progress", questions)
+        } else {
+            console.log("You need to login")
+            res.render("index")
+        }
+
+    })
+    
 
 }
