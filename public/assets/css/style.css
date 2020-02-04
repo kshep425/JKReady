@@ -4,7 +4,7 @@
     position: absolute;
     bottom: 390px;
     left: 50px;
-    background: url("villain_idle.png")
+    background: url("../images/villain_idle.png")
         0px 0px;
 }
 #hero-sprite-image {
@@ -13,7 +13,7 @@
     position: absolute;
     bottom: 395px;
     left: 342px;
-    background: url("hero_idle.png")
+    background: url("../images/foxy_fixer_celebrate.png")
         0px 0px;
 
 }
