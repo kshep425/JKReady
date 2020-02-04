@@ -1,0 +1,18 @@
+<div id="high_scores_div" class="center">
+    <table class="table table-bordered" id="scores">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each scores}}
+            <tr>
+                <td>{{username}}</td>
+                <td>{{score}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
