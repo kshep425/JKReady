@@ -1,3 +1,9 @@
-.container {
-    background-image: url(..\assets\hsbg);
+body {
+    background-image: url(../image/fixed_image_3.jpg);
+}
+
+#scores {
+    background-color: #d8d8d8;
+    width: 500px;
+    margin: 30px;
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,39 +22,51 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">New Game</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">References</a>
-            </li>
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                References
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">HTML W3</a>
+                <a class="dropdown-item" href="#">CSS W3</a>
+                <a class="dropdown-item" href="#">Javascript</a>
+              </div>
+            </div>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
           </ul>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Username</th>
-                <th scope="col">Score</th>
-                <th scope="col">Column heading</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Default</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-        </tbody>
-      </table> 
+        </nav>
+        <table class="center">
+        <table class="table table-bordered" id="scores">
+          <thead>
+            <tr>
+              <th scope="col">Username</th>
+              <th scope="col">Score</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </table>
           <!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
           </form> -->
         </div>
-      </nav>
+      
     </div>
 </body>
 </html>
