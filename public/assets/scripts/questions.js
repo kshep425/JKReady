@@ -1,6 +1,5 @@
 $(document).ready(function () {
   hero_idle();
-  let animationInterval;
   function hero_idle() {
     let widthOfSpriteSheet = 448;
     let widthOfEachSprite = 55;
@@ -21,4 +20,33 @@ $(document).ready(function () {
       //reset the position to show first sprite after the last one
     }, speed);
   }
+
+    // blogContainer holds questions
+    let quiz_container = $(".quiz-container");
+    // Click events for the edit and delete buttons
+    $(document).on("click", "next-question-button", nextQuestion);
+    $(document).on("click", "submit-button", handlePostEdit);
+    postCategorySelect.on("change", handleCategoryChange);
+    var posts;
+  
+    // This function grabs posts from the database and updates the view
+    function getPosts(category) {
+      var categoryString = category || "";
+      if (categoryString) {
+        categoryString = "/category/" + categoryString;
+      }
+      $.get("/api/posts" + categoryString, function(data) {
+        console.log("Posts", data);
+        posts = data;
+        if (!posts || !posts.length) {
+          displayEmpty();
+        }
+        else {
+          initializeRows();
+        }
+      });
+    }
 });
+
+next_question();
+submit_button()

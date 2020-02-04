@@ -14,6 +14,13 @@
     border: none;
     box-sizing: border-box;
   }
+.world{
+  width:466px; /*width of your image*/
+  height:434px; /*height of your image*/
+  background-image:url('../images/broken_image_1.png');
+  margin:0; /* If you want no margin */
+  padding:0; /*if your want to padding */
+}
   
 .blackboard {
     background: #2E706C;
