@@ -219,15 +219,15 @@ module.exports = function (app) {
 
     app.post("/api/question", function(req, res){
         console.log("Add Question to db")
-        if (req.user){
+        // if (req.user){
             add_question(req.body)
             .then(function(result){
                 console.log(result)
                 res.json(result)
             })
-        } else {
-            res.json(must_login())
-        }
+        // } else {
+        //     res.json(must_login())
+        // }
     });
 
 }
