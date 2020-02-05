@@ -200,8 +200,6 @@ module.exports = function (app) {
             res.json(must_login())
         }
     })
-
-    // Get all of the current user's data
     app.get("/api/user_data", function (req, res) {
         console.log("Get user's information")
         if (req.user) {
