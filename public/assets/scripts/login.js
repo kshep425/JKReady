@@ -5,14 +5,6 @@ $(document).ready(function () {
     var password_input = $("input#password_input");
     var logout_form = $("#logout_form");
 
-    var intro_div = $("#intro_div");
-    var contact_div = $("#contact_div");
-
-    function format_login_page(){
-        contact_div.hide();
-        //intro_div.hide();
-    }
-
     // When the form is submitted, we validate there's an username and password entered
     login_form.on("submit", function (event) {
         event.preventDefault();
@@ -49,10 +41,7 @@ $(document).ready(function () {
         .then(function () {
             console.log("Go to intro page")
              window.location.replace("/intro");
-             login_form.hide();
-             intro_div.show();
         })
-
     }
 
     function logout_user() {
@@ -63,7 +52,6 @@ $(document).ready(function () {
         .catch(function(err) {
             console.log(err)
         })
-        login_form.show();
     }
-    format_login_page();
+
 });

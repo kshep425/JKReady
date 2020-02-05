@@ -149,7 +149,6 @@ module.exports = function (app) {
         get_progress_table()
             .then(function (result) {
                 if (result) {
-
                     console.log(result)
                     res.json(result)
                 } else {
