@@ -71,11 +71,22 @@ module.exports = function (app) {
 
     app.get("/game", function (req, res) {
         console.log("Start Game and display game board")
-        res.render("progress")
+        if(req.user){
+            res.render("progress")
+        } else {
+            console.log("You need to login")
+            res.render("index")
+        }
     })
 
     app.get("/contact", function (req, res) {
         console.log("Display contact us form")
+        if(req.user){
+            res.render("contact")
+        } else {
+            console.log("You need to login")
+            res.render("index")
+        }
     })
 
     app.get("/instructions", function (req, res) {
