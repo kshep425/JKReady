@@ -1,14 +1,14 @@
 body {
   background-color: black;}
 .demo-content{
-    padding: 15px;
-    font-size: 18px;
+    /* padding: 15px; */
+    /* font-size: 18px; */
     background: none;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
-.demo-content.bg-alt{
+/* .demo-content.bg-alt{
     background: none;
-}
+} */
 * {
     margin: 0px;
     padding: 0px;
@@ -16,10 +16,12 @@ body {
     border: none;
     box-sizing: border-box;
   }
-.world{
-  width:466px; /*width of your image*/
-  height:434px; /*height of your image*/
-  background-image:url('../images/broken_image_1.png');
+#world{
+  height:100%;
+  width:100%;
+  /* background-image:url('../images/broken_image_1.png'); */
+  background-size:contain;
+  background-repeat: no-repeat;
   margin:0; /* If you want no margin */
   padding:0; /*if your want to padding */
 }
@@ -31,9 +33,12 @@ body {
 
 }
 
-#hero-sprite-image {
+#foxy-fixer-idle-speak {
     height: 82px;
-    width: 56px;
+    width: 50px;
+    position: absolute;
+    left:-12px;
+    bottom:-154px;
     background: url("../images/foxy_fixer_idle_speak.png")
         0px 0px;
 }

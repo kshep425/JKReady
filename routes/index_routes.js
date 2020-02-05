@@ -1,4 +1,3 @@
-
 const path = require("path");
 const db_queries = require("../config/db_queries")
 module.exports = function (app) {

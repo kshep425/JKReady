@@ -1,24 +1,4 @@
-#villain-sprite-image {
-    height: 82px;
-    width: 56px;
-    position: absolute;
-    bottom: 390px;
-    left: 50px;
-    background: url("../images/villain_idle.png")
-        0px 0px;
-}
-#hero-sprite-image {
-    height: 82px;
-    width: 56px;
-    position: absolute;
-    bottom: 395px;
-    left: 342px;
-    background: url("../images/foxy_fixer_celebrate.png")
-        0px 0px;
-
-}
-
-body, html {
+/* body, html {
     height: 100%;
     margin: 0;
 }
@@ -35,4 +15,4 @@ body {
     background-color: #d8d8d8;
     width: 500px;
     margin: 30px;
-}
+} */
