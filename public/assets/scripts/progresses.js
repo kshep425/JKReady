@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let $quiz_container = $(".quiz-container");
+  let intro_form = $("#intro_form")
   hero_idle();
   function hero_idle() {
     let widthOfSpriteSheet = 448;
@@ -25,7 +26,7 @@ $(document).ready(function () {
     // $(document).on("click", "next-question-button", nextQuestion);
     // $(document).on("click", "submit-button", handlePostEdit);
     let questions = [];
-    get_questions();
+    //get_questions();
       // This function resets the questions displayed with new questions from the database
     function initialize_rows() {
       $quiz_container.empty();
@@ -37,12 +38,19 @@ $(document).ready(function () {
     }
    // This function grabs questinos from the database and updates the questions view
    function get_questions() {
-    $.get("/api/questions/:id", function(data) {
+    $.get("/api/questions/1", function(data) {
       questions = data;
       initialize_rows();
       console.log(questions)
     });
   }
+
+  intro_form.on("submit", function(event){
+      event.preventDefault();
+      console.log("Start Game by getting questions")
+      get_questions();
+      window.location.replace("/game")
+  })
 });
 
 // next_question();
