@@ -59,9 +59,9 @@ module.exports = function (app) {
         console.log("Start Game and display game board")
             // findAll returns all entries for a table when used with no options
             db.Progress.findAll({}).then(function (dbProgress) {
-            let progress = dbProgress;
-            console.log(progress);
-            res.render("progress", dbProgress)
+            // let progress = dbProgress;
+            console.log(dbProgress);
+            res.render("progress", {progress: [{correct_answer: "1", question: "?", wrong_answer_1: "2", wrong_answer_2: "3"}]})
             });
     })
 
