@@ -15,6 +15,7 @@ Open the game here: [https://rabbit-the-fixer.herokuapp.com/](https://rabbit-the
 
 ## Usage
 These are the steps to run this locally on your machine
+1.  Create jkready_db mysql database
 1.  Clone the JKReady github
     ```
         git clone https://github.com/kshep425/JKReady.git
