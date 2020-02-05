@@ -1,7 +1,6 @@
 
 const path = require("path");
-var db = require("../models");
-
+const db_queries = require("../config/db_queries")
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
@@ -16,13 +15,27 @@ module.exports = function (app) {
 
     })
 
-    app.get("/scores", function (req, res) {
+    app.get("/scores", async function (req, res) {
         console.log("Open High Scores Page")
         if (req.user) {
+            //console.log(app)
             console.log("You are logged in as: " + req.user.username)
-            let high_scores = { scores: [{ username: "test_username", score: "0" }] }
-            console.log(high_scores)
-            res.render("high_scores", high_scores)
+            db_queries.get_all_scores()
+                .then(function(scores){
+                    console.log('SCORE!!!')
+                    console.log(scores)
+                    let s = scores.map(score => {
+                        return {
+                            username: score.User.username,
+                            score: score.score
+                        }
+                    })
+                    console.log("Mapped Scores")
+                    let high_scores = {scores: s}
+                    console.log(high_scores)
+                    res.render("high_scores", { scores: [ { username: 'newuser1', score: 0 } ] })
+                })
+
         } else {
             console.log("You need to login")
             res.render("index")
@@ -58,6 +71,7 @@ module.exports = function (app) {
 
     app.get("/game", function (req, res) {
         console.log("Start Game and display game board")
+        res.render("progress")
     })
 
     app.get("/contact", function (req, res) {
