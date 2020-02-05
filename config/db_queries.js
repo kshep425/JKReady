@@ -1,6 +1,6 @@
 const db = require("../models")
 
-db_queries = {
+const db_queries = {
     get_user_score: function (id) {
         return db.Scores.findOne(
             {
@@ -62,4 +62,4 @@ db_queries = {
 
 }
 
-module_exports = db_queries;
+module.exports = db_queries;
