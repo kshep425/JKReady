@@ -18,7 +18,7 @@ $(document).ready(function () {
         animationInterval = setInterval(() => {
             var spriteSheet = document.getElementById("villain-sprite-image");
 
-            spriteSheet.style.backgroundPosition = `-${position}px 0px`;
+            //spriteSheet.style.backgroundPosition = `-${position}px 0px`;
 
             if (position < widthOfSpriteSheet) {
                 position = position + diff;
@@ -40,7 +40,7 @@ $(document).ready(function () {
 
         animationInterval = setInterval(() => {
             var spriteSheet = document.getElementById("hero-sprite-image");
-            spriteSheet.style.backgroundPosition = `-${position}px 0px`;
+            //spriteSheet.style.backgroundPosition = `-${position}px 0px`;
 
             if (position < widthOfSpriteSheet) {
                 position = position + diff;
@@ -56,4 +56,3 @@ villain_start_animation();
 hero_start_animation();
 
 });
-

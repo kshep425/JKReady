@@ -1,9 +1,17 @@
 $(document).ready(function () {
+    console.log(window.location.pathname)
     var login_form = $("#login_form");
     var username_input = $("input#username_input");
     var password_input = $("input#password_input");
     var logout_form = $("#logout_form");
-    var logout_button = $("#logout_button")
+
+    var intro_div = $("#intro_div");
+    var contact_div = $("#contact_div");
+
+    function format_login_page(){
+        contact_div.hide();
+        //intro_div.hide();
+    }
 
     // When the form is submitted, we validate there's an username and password entered
     login_form.on("submit", function (event) {
@@ -23,6 +31,7 @@ $(document).ready(function () {
         login_user(user_data.username, user_data.password);
         username_input.val("");
         password_input.val("");
+
     });
 
     logout_form.on("submit", function(event) {
@@ -37,22 +46,24 @@ $(document).ready(function () {
             username: username,
             password: password
         })
-            .then(function () {
-                window.location.replace("/");
-                // If there's an error, log the error
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
+        .then(function () {
+            console.log("Go to intro page")
+             window.location.replace("/intro");
+             login_form.hide();
+             intro_div.show();
+        })
+
     }
 
     function logout_user() {
         $.get("/api/logout")
         .then(function(){
-            window.location.replace("/")
+            window.location.replace("/login")
         })
         .catch(function(err) {
             console.log(err)
         })
+        login_form.show();
     }
+    format_login_page();
 });

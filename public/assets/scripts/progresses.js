@@ -7,11 +7,11 @@ $(document).ready(function () {
     let position = widthOfEachSprite; //start position for the image
     let speed = 200; //in millisecond(ms)
     let diff = widthOfEachSprite; //difference between two sprites
-  
+
     animationInterval = setInterval(() => {
       var spriteSheet = document.getElementById("hero-sprite-image");
-      spriteSheet.style.backgroundPosition = `-${position}px 0px`;
-  
+      //spriteSheet.style.backgroundPosition = `-${position}px 0px`;
+
       if (position < widthOfSpriteSheet) {
         position = position + diff;
       } else {
