@@ -33,7 +33,11 @@ module.exports = function (app) {
                     console.log("Mapped Scores")
                     let high_scores = {scores: s}
                     console.log(high_scores)
-                    res.render("high_scores", { scores: [ { username: 'newuser1', score: 0 } ] })
+                    res.render("high_scores", high_scores)
+                })
+                .catch(function(err){
+                    console.log("Could Not Get Scores")
+                    console.log(err)
                 })
 
         } else {
