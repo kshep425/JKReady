@@ -1,8 +1,8 @@
-# Rabbit The Fixer
+# Foxy The Fixer
 By JKReady
 
 ## Description
-Help Rabbit the Fixer to restore worlds back to their good state, by changing html and css files ruined by an evildoer!
+Help Foxy the Fixer to restore worlds back to their good state, by changing html and css files ruined by an evildoer!
 
 Open the game here: [https://rabbit-the-fixer.herokuapp.com/](https://rabbit-the-fixer.herokuapp.com/)
 
@@ -15,6 +15,7 @@ Open the game here: [https://rabbit-the-fixer.herokuapp.com/](https://rabbit-the
 
 ## Usage
 These are the steps to run this locally on your machine
+1.  Create jkready_db mysql database
 1.  Clone the JKReady github
     ```
         git clone https://github.com/kshep425/JKReady.git
