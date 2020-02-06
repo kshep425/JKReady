@@ -1,17 +1,17 @@
-<div class="container1">
+{{!-- <div class="container1">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Navbar</a>
-<form id="logout_form" class="logout">
-                    <button id="logout_button" class="logout nav-item" type="submit">
-                        Log Out
-                    </button>
-                </form>
+        <form id="logout_form" class="logout">
+            <button id="logout_button" class="logout nav-item" type="submit">
+                Log Out
+            </button>
+        </form>
 
-                <form id="high_scores_form" class="high_scores nav-item">
-                    <button id="high_scores_button" class="high_scores" type="submit">
-                        View High Scores
-                    </button>
-                </form>
+        <form id="high_scores_form" class="high_scores nav-item">
+            <button id="high_scores_button" class="high_scores" type="submit">
+                View High Scores
+            </button>
+        </form>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
             aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,4 +39,41 @@
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
             </ul>
-    </nav>
+    </nav> --}}
+
+<div class="row">
+    <div class="col-md-1">
+        <div class="demo-content"><img alt="icon" src="assets/images/hero_icon.png" /></div>
+    </div>
+    <div class="col-md-9">
+        <div class="demo-content">
+            <nav class="nav nav-pills nav-fill">
+                <a class="nav-item nav-link" href="/instructions">Instructions</a>
+                <a class="nav-item nav-link" href="/scores">High Scores</a>
+                <a class="nav-item nav-link" href="/contact">About Us</a>
+            </nav>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="demo-content">
+            <a class="logout nav-item nav-link" href="#">Login/Logout</a>
+        </div>
+    </div>
+</div>
+    <div class="row footer">
+        <div class="col-md-3">
+            <div class="demo-content">Contact Us</div>
+        </div>
+        <div class="col-md-2">
+            <div class="demo-content">Copyright</div>
+        </div>
+        <div class="col-md-7">
+            <div class="demo-content">
+                <nav class="nav nav-pills nav-fill">
+                    <a class="nav-item nav-link" href="/instructions">Instructions</a>
+                    <a class="nav-item nav-link" href="/scores">High Scores</a>
+                    <a class="nav-item nav-link" href="/contact">About Us</a>
+                </nav>
+            </div>
+        </div>
+    </div>

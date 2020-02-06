@@ -3,6 +3,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 const express = require("express");
 const app = express();
+const db_queries = require("../config/db_queries")
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -218,15 +219,15 @@ module.exports = function (app) {
 
     app.post("/api/question", function(req, res){
         console.log("Add Question to db")
-        if (req.user){
+        // if (req.user){
             add_question(req.body)
             .then(function(result){
                 console.log(result)
                 res.json(result)
             })
-        } else {
-            res.json(must_login())
-        }
+        // } else {
+        //     res.json(must_login())
+        // }
     });
 
 }

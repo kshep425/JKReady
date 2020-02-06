@@ -52,7 +52,7 @@ $(document).ready(function () {
         }, speed);
     }
 //Start animation
-villain_start_animation();
-hero_start_animation();
+// villain_start_animation();
+// hero_start_animation();
 
 });
