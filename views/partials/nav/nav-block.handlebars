@@ -1,42 +1,22 @@
 <div class="container1">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
-<form id="logout_form" class="logout">
-                    <button id="logout_button" class="logout nav-item" type="submit">
-                        Log Out
-                    </button>
-                </form>
-
-                <form id="high_scores_form" class="high_scores nav-item">
-                    <button id="high_scores_button" class="high_scores" type="submit">
-                        View High Scores
-                    </button>
-                </form>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        References
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">HTML W3</a>
-                        <a class="dropdown-item" href="#">CSS W3</a>
-                        <a class="dropdown-item" href="#">Javascript</a>
-                    </div>
-                </div>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
+        <div class="row">
+        <div class="col-md-1">
+            <div class="demo-content"><img alt="icon" src="assets/images/hero_icon.png" /></div>
+        </div>
+        <div class="col-md-9">
+            <div class="demo-content">
+                <nav class="nav nav-pills nav-fill">
+                    <a class="nav-item nav-link text-white" href="/instructions">Instructions</a>
+                    <a class="nav-item nav-link text-white" href="/scores">High Scores</a>
+                    <a class="nav-item nav-link  text-white" href="/contact">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="demo-content">
+                <a id="logout_link" class="nav-item nav-link  text-white" href="/logout">Logout</a>
+            </div>
+        </div>
+    </div>
     </nav>
