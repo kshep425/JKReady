@@ -1,0 +1,15 @@
+#intro_div {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+#intro_video {
+    position: absolute;
+    z-index: 1;
+}
+
+#yes_help_button{
+    position: absolute;
+    z-index: 2;
+}
