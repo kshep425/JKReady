@@ -23,26 +23,21 @@
             <img id="world" src="assets/images/broken_image_1.png" alt="world">
         </div>
         <div class="col-md-6 blackboard">
-            <div id="quiz" class="demo-content quiz-container">
+            <div id="quiz" class="demo-content quiz-container" style="text-align:center;">
                 {{#each progress}}
-                    <p>For {{points}} points:</p>
-                    <h2 question_id={{id}}>{{question}}</h2>
-                    <button>{{correct_answer}}</button>
-                    <button>{{wrong_answer_1}}</button>
-                    <button>{{wrong_answer_2}}</button>
+                <p>For {{points}} points:</p>
+                <h2 class="question">{{question}}</h2>
+                <button type="button" class="answer btn btn-md"
+                    style="color: #fff;";>{{correct_answer}}</button>
+                <button type="button" class="answer btn btn-md"
+                    style="color: #fff;">{{wrong_answer_1}}</button>
+                <button type="button" class="answer btn btn-md"
+                    style="color: #fff;">{{wrong_answer_2}}</button>
                 {{/each}}
                 <div id="hero-sprite-container">
                     <div id="foxy-fixer-idle-speak">
                     </div>
                 </div>
-                <!-- <button id="submit-button">Submit Answers</button> -->
-                <button id="submit-button" type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                    data-target="#quiz-results">
-                    Submit Answers
-                </button>
-                <button id="next-question-button" type="button" class="btn btn-primary btn-lg">Next
-                    Question</button>
-                <button id="prev-question-button" type="button" class="btn btn-primary btn-lg">Previous</button>
             </div>
         </div>
     </div>

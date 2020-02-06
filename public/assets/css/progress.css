@@ -1,5 +1,14 @@
 body {
-  background-color: black;}
+  background-image:url("../images/blue_wallpaper.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .demo-content{
     background: none;
 }
@@ -11,6 +20,16 @@ body {
     border: none;
     box-sizing: border-box;
   }
+.question{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  color:#fff
+}
+.answer{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  text-align: center
+}
 
 #world {
   height:100%;
@@ -33,8 +52,8 @@ body {
     height: 82px;
     width: 50px;
     position: absolute;
-    left:-12px;
-    bottom:-154px;
+    left:5%;
+    bottom:92%;
     background: url("../images/foxy_fixer_idle_speak.png")
         0px 0px;
 }
@@ -44,72 +63,21 @@ body {
     position: relative;
     width: calc(100% - 100px);
 }
+
+
+
+.btn:hover {
+  background-color: rgb(86, 205, 245) !important;
+  color: #fff;
+  cursor: pointer;
+}
+
   
-  #quiz h1 {
-    color: #ffff;
-    font-weight: 600;
-    font-size: 36px;
-    text-transform: uppercase;
-    text-align: left;
-    line-height: 44px;
-  }
-  
-  #quiz button {
-    /* float: left;
-    margin: 8px 0px 0px 8px;
-    padding: 4px 8px; */
-    background: #9ACFCC;
-    color: #ffff;
-    font-size: 14px;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  #quiz button:hover {
-    background: #36a39c;
-    color: #FFF;
-  }
-  
-  #quiz button:disabled {
-    opacity: 0.5;
-    background: #9ACFCC;
-    color: #ffff;
-    cursor: default;
-  }
-  
-  #question {
-    padding: 20px;
-    background: none;
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background:none;
     text-align: center;
-  }
-  
-  #question h2 {
-    margin-bottom: 16px;
-    font-weight: 600;
-    font-size: 20px;
-    color: #ffff;
-  }
-  
-  #question input[type=radio] {
-    display: none;
-  }
-  
-  #question label {
-    display: inline-block;
-    margin: 4px;
-    padding: 8px;
-    background: none;
-    color: lightgreen;
-    width: calc(50% - 8px);
-    min-width: 50px;
-    cursor: pointer;
-  }
-  
-  #question label:hover {
-    background: none;
-  }
-  
-  #question input[type=radio]:checked + label {
-    background: none;
-    color: #FAFAFA;
-  }
+ }

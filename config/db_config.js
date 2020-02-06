@@ -3,8 +3,7 @@ require("dotenv").config()
 const db_obj = {
     database: process.env.DB_NAME || "jkready_db",
     username: process.env.DB_USER || "root",
-    password: process.env.DB_PW,
-    password: process.env.DB_PW,
+    password: process.env.DB_PW || "Biodesi647025!",
     host: process.env.DB_HOST || "localhost"
 }
 
