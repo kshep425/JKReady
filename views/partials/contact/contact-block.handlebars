@@ -1,11 +1,15 @@
     <h1> Contact Us </h1>
     <form>
         <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
+            {{label "name" "Please enter your name"}}
+            <label for="name">Name</label>
+            {{input "firstname" "Richard"}}
             <input class="form-control" type="text" placeholder="First and Last Name">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+
+            <label for="email">Email address</label>
+            {{input "email"}}
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

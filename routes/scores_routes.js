@@ -1,13 +1,11 @@
-app.get("/scores", function (req,res){
-    console.log("Open High Scores Page")
-    if (req.user) {
-        console.log("You are logged in as: " + req.user.username)
-        let high_scores = {scores: [{username: "test_username", score: "0"}]}
-        console.log(high_scores)
-        res.render("index", high_scores)
-    } else {
-        console.log("You need to login")
-        res.sendFile(path.join(__dirname, "/../public/assets/login.html"))
-    }
+const express = require('express')
+const router = express.Router();
 
+router.get('/scores', (req,res) =>{
+    res.render('index',{
+        title: 'High_scores',
+        style: 'style.css',
+        username: 'username',
+        score: 'score'
+    })
 })

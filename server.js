@@ -46,6 +46,7 @@ require("./routes/login_api_routes")(app)
 require("./routes/game_api_routes")(app)
 require("./routes/index_routes")(app)
 
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({force: false}).then(function() {
