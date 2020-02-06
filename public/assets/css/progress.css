@@ -8,6 +8,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
 a{
   color:white;
   }
@@ -16,32 +17,38 @@ a{
     background: none;
 }
 
+.world-container{
+  background: black;
+}
+
+.board{
+font-family: 'Carter One';  font-style: normal;
+  font-size: 15px ! important;
+  color:#49fb35;
+}
+
 * {
     margin: 0px;
     padding: 0px;
-    font: 16px 'Source Sans Pro', sans-serif;
+    font-family: 'Carter One';  font-style: normal;
     border: none;
     box-sizing: border-box;
-  }
-.question{
-  font-family: 'Indie Flower', cursive;
-  font-size: 16px;
-  color:#fff
-}
-.answer{
-  font-family: 'Indie Flower', cursive;
-  font-size: 10px;
-  text-align: center
 }
 
-.world {
-  height:100%;
+.question{
+  font-family: 'Carter One';
+  font-size: 26px ! important;
+  color:#fff
+}
+
+#world {
+  background-image:url('../images/broken_image_1.png');
   width:100%;
-  /* background-image:url('../images/broken_image_1.png'); */
+  height:200px;
+  margin-top: 30%;
+  margin-left: 4.5%;
+  background-repeat:no-repeat;
   background-size:contain;
-  background-repeat: no-repeat;
-  margin:0; /* If you want no margin */
-  padding:0; /*if your want to padding */
 }
   
 .blackboard {
@@ -62,21 +69,12 @@ a{
 }
   
 #quiz {
-    margin: 32px 45px 148px 45px;
+
     position: relative;
-    width: calc(100% - 100px);
+    margin-top: 30%;
 }
-
-
-
-.btn:hover {
-  background-color: rgb(86, 205, 245) !important;
-  color: #fff;
-  cursor: pointer;
-}
-
   
-  .footer {
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
