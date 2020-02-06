@@ -19,20 +19,17 @@
         </div>
     </div> --}}
     <div class="row">
-        <div class="col-md-6 demo-content rounded">
-            <img id="world" src="assets/images/broken_image_1.png" alt="world">
+        <div class="col-md-6 demo-content">
+            {{#each progress}}
+            <h2 question_id={{id}} class="world">
         </div>
         <div class="col-md-6 blackboard">
-            <div id="quiz" class="demo-content quiz-container" style="text-align:center;">
-                {{#each progress}}
-                <p>For {{points}} points:</p>
-                <h2 class="question">{{question}}</h2>
-                <button type="button" class="answer btn btn-md"
-                    style="color: #fff;";>{{correct_answer}}</button>
-                <button type="button" class="answer btn btn-md"
-                    style="color: #fff;">{{wrong_answer_1}}</button>
-                <button type="button" class="answer btn btn-md"
-                    style="color: #fff;">{{wrong_answer_2}}</button>
+            <div id="quiz" class="demo-content quiz-container text-center center">
+                <p class="text-center">For {{points}} points:</p>
+                <h2 question_id={{id}} class="question">{{question}}</h2>
+                <button>{{correct_answer}}</button>
+                <button>{{wrong_answer_1}}</button>
+                <button>{{wrong_answer_2}}</button>
                 {{/each}}
                 <div id="hero-sprite-container">
                     <div id="foxy-fixer-idle-speak">
@@ -41,4 +38,3 @@
             </div>
         </div>
     </div>
-</div>

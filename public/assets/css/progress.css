@@ -8,6 +8,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+a{
+  color:white;
+  }
 
 .demo-content{
     background: none;
@@ -21,17 +24,17 @@ body {
     box-sizing: border-box;
   }
 .question{
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Indie Flower', cursive;
   font-size: 16px;
   color:#fff
 }
 .answer{
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Indie Flower', cursive;
   font-size: 10px;
   text-align: center
 }
 
-#world {
+.world {
   height:100%;
   width:100%;
   /* background-image:url('../images/broken_image_1.png'); */
@@ -59,7 +62,7 @@ body {
 }
   
 #quiz {
-    margin: 38px 44px 47px 12px;
+    margin: 32px 45px 148px 45px;
     position: relative;
     width: calc(100% - 100px);
 }
