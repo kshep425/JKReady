@@ -7,7 +7,7 @@ module.exports = function (app) {
         console.log("Open Homepage");
         if (req.user) {
             console.log("You are logged in as: " + req.user.username)
-            res.render("index", { username: username })
+            res.render("index", { username: req.user.username })
         } else {
             console.log("You need to login")
             res.render("index")
@@ -82,7 +82,7 @@ module.exports = function (app) {
                 console.log(user)
                 db_queries.get_question_by_id(user.ProgressId)
                     .then(function (result) {
-    
+
                         const progress =  {
                                 question: result.question,
                                 correct_answer: result.correct_answer,
@@ -92,10 +92,10 @@ module.exports = function (app) {
                                 prev_question_id: result.prev_question_id,
                                 next_question_id: result.next_question_id,
                                 stage: result.stage
-                                
-    
+
+
                             }
-    
+
                         res.render("progress",  progress )
                     }).catch(err => console.log(err))
             })
