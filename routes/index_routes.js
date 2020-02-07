@@ -60,6 +60,8 @@ module.exports = function (app) {
 
     app.get("/logout", function (req, res) {
         console.log("User has logged out")
+        req.logout();
+        res.render("index");
     })
 
     app.get("/intro", function (req, res) {
