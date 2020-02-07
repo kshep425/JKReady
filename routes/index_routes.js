@@ -1,5 +1,6 @@
 const path = require("path");
 const db_queries = require("../config/db_queries")
+var db = require("../models");
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
@@ -75,24 +76,30 @@ module.exports = function (app) {
     app.get("/game", function (req, res) {
         console.log("Start Game and display game board")
         if (req.user) {
-            db_queries.get_progress_table()
-                .then(function (result) {
-                    const progress = result.map(function (res) {
-                        return {
-                            question: res.question,
-                            correct_answer: res.correct_answer,
-                            wrong_answer_1: res.wrong_answer_1,
-                            wrong_answer_2: res.wrong_answer_2,
-                            points: res.points,
-                            prev_question_id: res.prev_question_id,
-                            next_question_id: res.next_question_id,
-                            stage: res.stage
+            db.Users.findOne({where: {id: req.user.id}})
+            .then(function(user){
+                console.log(req.user);
+                console.log(user)
+                db_queries.get_question_by_id(user.ProgressId)
+                    .then(function (result) {
+    
+                        const progress =  {
+                                question: result.question,
+                                correct_answer: result.correct_answer,
+                                wrong_answer_1: result.wrong_answer_1,
+                                wrong_answer_2: result.wrong_answer_2,
+                                points: result.points,
+                                prev_question_id: result.prev_question_id,
+                                next_question_id: result.next_question_id,
+                                stage: result.stage
+                                
+    
+                            }
+    
+                        res.render("progress",  progress )
+                    }).catch(err => console.log(err))
+            })
 
-                        }
-                    })
-
-                    res.render("progress", { progress: progress })
-                })
         } else {
             console.log("You need to login")
             res.render("index")

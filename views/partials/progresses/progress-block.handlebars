@@ -20,17 +20,21 @@
     </div> --}}
     <div class="row">
         <div class="col-md-6 demo-content shadow-lg rounded world-container">
-            {{#each progress}}
-            <div id="world"></div>
+            <img id="world" class="rounded"src="assets/images/broken_image_1.png"/>
         </div>
         <div class="col-md-6 blackboard shadow-lg rounded">
             <div id="quiz" class="demo-content quiz-container text-center">
                 <p class="text-center board">For {{points}} points:</p>
                 <h2 question_id="{{id}}" class="question">{{question}}</h2>
-                <button type="button"class="btn btn-outline-outline text-white board">{{correct_answer}}</button>
-                <button type="button"class="btn btn-outline-outline text-white board">{{wrong_answer_1}}</button>
-                <button type="button"class="btn btn-outline-outline text-white board">{{wrong_answer_2}}</button>
-                {{/each}}
+                <div id="next_question_id" data-next_question_id="{{next_question_id}}"></div>
+                <div id="btn_div">
+                    <div id="correct_answer"><button type="button"
+                            class="btn btn-outline-outline text-white answers board correct" data-replace_img={{correct_img}}>{{correct_answer}}</button></div>
+                    <div id="option_2"><button type="button"
+                            class="btn btn-outline-outline text-white answers board wrong" data-replace-img={{wrong_img_1}}>{{wrong_answer_1}}</button></div>
+                    <div id="option_3"><button type="button"
+                            class="btn btn-outline-outline text-white answers board wrong" data-replace-img={{wrong_img_2}}>{{wrong_answer_2}}</button></div>
+                </div>
                 <div id="hero-sprite-container">
                     <div id="foxy-fixer-idle-speak">
                     </div>
