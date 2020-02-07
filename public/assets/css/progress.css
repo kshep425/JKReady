@@ -18,7 +18,7 @@ a{
 }
 
 .world-container{
-  background: black;
+  background: #fff;
 }
 
 .board{
@@ -42,11 +42,8 @@ font-family: 'Carter One';  font-style: normal;
 }
 
 #world {
-  background-image:url('../images/broken_image_1.png');
   width:100%;
-  height:200px;
-  margin-top: 30%;
-  margin-left: 4.5%;
+  height:100%;
   background-repeat:no-repeat;
   background-size:contain;
 }
