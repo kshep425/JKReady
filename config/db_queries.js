@@ -29,7 +29,8 @@ const db_queries = {
     get_all_scores: function (){
         return db.Scores.findAll({
             include: [db.Users],
-            limit: 10
+            limit: 5,
+            order: [['score', 'DESC']]
         })
     },
 
