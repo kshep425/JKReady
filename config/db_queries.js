@@ -26,7 +26,7 @@ const db_queries = {
         )
     },
 
-    get_all_scores: function (){
+    get_all_scores: function () {
         return db.Scores.findAll({
             include: [db.Users],
             limit: 5,
@@ -55,22 +55,18 @@ const db_queries = {
         })
     },
 
-    add_question: function (params){
+    add_question: function (params) {
         console.log("Create questions with these params:")
         console.log(params)
         return db.Progress.create(params)
     },
 
-    add_questions: function (questions_array){
-        let results = []
-        for(i = 0; i <= questions_array.length; i++){
-            results.push(add_question(params))
-            console.log(results.length)
-            if (results.length === questions_array.length) {
-                console.log(results.length)
-                return results;
-            }
-        };
+    add_questions: function (questions_array) {
+
+        return db.Progress.bulkCreate(questions_array, {
+            updateOnDuplicate: ["id", "question", "correct_answer", "correct_response", "correct_img", "wrong_answer_1", "wrong_response_1", "wrong_answer_2", "wrong_response_2", "next_question_id", "prev_question_id"]
+        })
+
     }
 
 }
