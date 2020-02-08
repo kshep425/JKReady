@@ -1,25 +1,60 @@
 <div class="container mt-3">
     <div class="row">
+
         <div class="col-md-6 demo-content shadow-lg rounded world-container">
-            <img id="world" class="rounded"src="assets/images/broken_image_1.png"/>
+            <img id="world" class="rounded" src="/assets/images/{{start_img}}" data-correct="{{correct_img}}"/>
         </div>
+
         <div class="col-md-6 blackboard shadow-lg rounded">
+            <h4 id="answer_response"></h4>
             <div id="quiz" class="demo-content quiz-container text-center">
-                <p class="text-center board">For {{points}} points:</p>
-                <h2 question_id="{{id}}" class="question">{{question}}</h2>
-                <div id="next_question_id" data-next_question_id="{{next_question_id}}"></div>
+
+                <p class="text-center board">
+                    For {{points}} points:
+                </p>
+
+                <h2 question_id="{{id}}" class="question">
+                    {{question}}
+                </h2>
+
                 <div id="btn_div">
-                    <div id="correct_answer"><button type="button"
-                            class="btn btn-outline-outline text-white answers board correct" data-replace_img={{correct_img}}>{{correct_answer}}</button></div>
-                    <div id="option_2"><button type="button"
-                            class="btn btn-outline-outline text-white answers board wrong" data-replace-img={{wrong_img_1}}>{{wrong_answer_1}}</button></div>
-                    <div id="option_3"><button type="button"
-                            class="btn btn-outline-outline text-white answers board wrong" data-replace-img={{wrong_img_2}}>{{wrong_answer_2}}</button></div>
+                    <div id="correct_answer">
+                        <button type="button" class="btn btn-outline text-white answers board correct"
+                            data-response="{{correct_response}}">
+                            {{correct_answer}}
+                        </button>
+                    </div>
+
+                    <div id="option_2">
+                        <button type="button" class="btn btn-outline text-white answers board wrong"
+                            data-response={{wrong_response_1}}>
+                            {{wrong_answer_1}}
+                        </button>
+                    </div>
+
+                    <div id="option_3">
+                        <button type="button" class="btn btn-outline text-white answers board wrong"
+                            data-response={{wrong_response_2}}>
+                            {{wrong_answer_2}}
+                        </button>
+                    </div>
+
+                    <div id="high_scores_div" class="d-none">
+                        <a href="/scores">
+                            <button type="button" class="btn btn-outline text-white">
+                                High Scores
+                            </button>
+                        </a>
+                    </div>
                 </div>
+
                 <div id="hero-sprite-container">
                     <div id="foxy-fixer-idle-speak">
                     </div>
                 </div>
+
+                <div id="next_question_id" data-next_question_id={{next_question_id}}></div>
+
             </div>
         </div>
     </div>

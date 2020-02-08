@@ -7,7 +7,7 @@ app.get("/scores", function (req,res){
         res.render("index", high_scores)
     } else {
         console.log("You need to login")
-        res.sendFile(path.join(__dirname, "/../public/assets/login.html"))
+        res.render("index")
     }
 
 })
