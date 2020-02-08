@@ -47,7 +47,7 @@ font-family: 'Carter One';  font-style: normal;
   background-repeat:no-repeat;
   background-size:contain;
 }
-  
+
 .blackboard {
     background: #2E706C;
     color: #ffff;
@@ -64,13 +64,13 @@ font-family: 'Carter One';  font-style: normal;
     background: url("../images/foxy_fixer_idle_speak.png")
         0px 0px;
 }
-  
+
 #quiz {
 
     position: relative;
-    margin-top: 30%;
+    /* margin-top: 30%; */
 }
-  
+
 .footer {
     position: fixed;
     left: 0;
