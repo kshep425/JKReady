@@ -11,7 +11,6 @@ $(document).ready(function () {
         let user_data = get_user_data()
 
         console.log("Login Form submitted")
-        console.log(user_data)
 
         if (!user_data.username || !user_data.password) {
             return;
@@ -30,8 +29,7 @@ $(document).ready(function () {
         let user_data = get_user_data()
 
         console.log("Signup Form submitted")
-        console.log(user_data)
-
+        
         if (!user_data.username || !user_data.password) {
             return;
         }

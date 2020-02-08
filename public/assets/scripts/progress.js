@@ -12,11 +12,11 @@ $(document).ready(function () {
         audio.play();
     }
 
-    $("#correct_answer").click(function (event) {
+    $(".correct").click(function (event) {
         event.preventDefault();
         console.log("correct answer clicked");
-        let next_id = $("#next_question_id").attr("data-next_question_id")
-        let response = $("#correct_answer").attr("data-response")
+        let next_id = $("#next_question_id").data("next_question_id")
+        let response = $(".correct").data("response")
         display_response(response);
         console.log(next_id);
         update_world()
@@ -71,12 +71,14 @@ $(document).ready(function () {
 
     function display_response(response) {
         $("#answer_response").text(response)
+        console.log($("#answer_response"))
     }
 
     function update_world() {
         return new Promise(function (resolve, reject) {
             let correct_src = "/assets/images/" + $("#world").data("correct")
             console.log("correct_src: " + correct_src)
+
             $("#world").attr("src", correct_src).effect("puff", {}, 5000)
             setTimeout(function () {
                 console.log("Finished puffing")

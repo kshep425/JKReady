@@ -17,9 +17,7 @@ const game_obj = [
     },
     {
         id: 2,
-        question: `That evil doer widened cracks the roads, we can set the size of the cracks to 0 and that should close them up.
-
-        Select the css that sets height and width of the crack images to close the cracks..`,
+        question: `That evil-doer widened cracks in the road, select the CSS to set the size of the cracks to 0 and that should close them up.`,
 
         correct_answer: `
             img.cracks {
@@ -29,7 +27,7 @@ const game_obj = [
         correct_response: "Okay, I’m working with a pro",
         correct_img: "cracks_fixed_image.png",
         wrong_answer_1: "{crack-image: 0}",
-        wrong_response_1: "Did you lie on your resume",
+        wrong_response_1: "Did you lie on your resume?",
         wrong_img_1: "",
         wrong_answer_2: "let crack = 'is whack'",
         wrong_response_2: "Yes, Whitney we all remember that 'Crack is Whack'",
@@ -45,7 +43,7 @@ const game_obj = [
         Pick the correct DOM js method to clear the graffiti`,
 
         correct_answer: `
-        document.getElementById("storeFront")
+        document.getElementById("#storeFront")
         `,
         correct_response: "You are becoming a code master",
         correct_img: "graffiti_fixed_image.png",
@@ -69,7 +67,7 @@ const game_obj = [
         correct_answer: `
             clean_street()
         `,
-        correct_response: "Great Job!!! GAME OVER",
+        correct_response: "Great Job!!!",
         correct_img: "dirty_fixed_image.png",
         wrong_answer_1: 'clean.street',
         wrong_response_1: "So close but nope!",
