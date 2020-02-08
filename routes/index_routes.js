@@ -1,5 +1,6 @@
 const path = require("path");
 const db_queries = require("../config/db_queries")
+const game_questions = require("../config/game")
 var db = require("../models");
 module.exports = function (app) {
 
@@ -78,35 +79,92 @@ module.exports = function (app) {
     app.get("/game", function (req, res) {
         console.log("Start Game and display game board")
         if (req.user) {
-            db.Users.findOne({where: {id: req.user.id}})
-            .then(function(user){
-                console.log(req.user);
-                console.log(user)
-                db_queries.get_question_by_id(user.ProgressId)
-                    .then(function (result) {
+            db_queries.add_questions(game_questions)
+                .then(function () {
+                    console.log("Updated the questions table")
 
-                        const progress =  {
-                                question: result.question,
-                                correct_answer: result.correct_answer,
-                                wrong_answer_1: result.wrong_answer_1,
-                                wrong_answer_2: result.wrong_answer_2,
-                                points: result.points,
-                                prev_question_id: result.prev_question_id,
-                                next_question_id: result.next_question_id,
-                                stage: result.stage
+                    db.Users.findOne({ where: { id: req.user.id } })
+                        .then(function (user) {
+                            console.log(req.user);
+                            console.log(user)
+                            db_queries.get_question_by_id(req.user.ProgressId || 1)
+                                .then(function (result) {
 
+                                    const progress = {
+                                        question: result.question,
 
-                            }
+                                        correct_answer: result.correct_answer,
+                                        correct_response: result.correct_response,
+                                        correct_img: result.correct_img,
 
-                        res.render("progress",  progress )
-                    }).catch(err => console.log(err))
-            })
+                                        wrong_answer_1: result.wrong_answer_1,
+                                        wrong_response_1: result.wrong_response_1,
+
+                                        wrong_answer_2: result.wrong_answer_2,
+                                        wrong_response_2: result.wrong_response_2,
+
+                                        points: result.points,
+
+                                        prev_question_id: result.prev_question_id,
+
+                                        next_question_id: result.next_question_id,
+
+                                        stage: result.stage,
+
+                                        start_img: result.start_img
+                                    }
+
+                                    res.render("progress", progress)
+                                }).catch(err => console.log(err))
+                        })
+                })
 
         } else {
             console.log("You need to login")
             res.render("index")
         }
     })
+
+    app.get("/game/:id", function (req, res) {
+        console.log("Display Game Question #" + req.params.id)
+        if (req.user) {
+            db_queries.get_question_by_id(req.params.id || 1)
+                .then(function (result) {
+                    console.log(result)
+                    const progress = {
+                        question: result.question,
+
+                        correct_answer: result.correct_answer,
+                        correct_response: result.correct_response,
+                        correct_img: result.correct_img,
+
+                        wrong_answer_1: result.wrong_answer_1,
+                        wrong_response_1: result.wrong_response_1,
+
+                        wrong_answer_2: result.wrong_answer_2,
+                        wrong_response_2: result.wrong_response_2,
+
+                        points: result.points,
+
+                        prev_question_id: result.prev_question_id,
+
+                        next_question_id: result.next_question_id,
+
+                        stage: result.stage,
+
+                        start_img: result.start_img
+                    }
+
+                    res.render("progress", progress)
+                }).catch(err => console.log(err))
+
+
+        } else {
+            console.log("You need to login")
+            res.render("index")
+        }
+    })
+
 
     app.get("/contact", function (req, res) {
         console.log("Display contact us form")
