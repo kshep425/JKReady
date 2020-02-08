@@ -47,7 +47,7 @@ const db_queries = {
     },
 
     get_user_data: function (user_id) {
-        db.Users.findOne({
+        return db.Users.findOne({
             where: {
                 id: user_id,
             },
@@ -59,6 +59,18 @@ const db_queries = {
         console.log("Create questions with these params:")
         console.log(params)
         return db.Progress.create(params)
+    },
+
+    add_questions: function (questions_array){
+        let results = []
+        for(i = 0; i <= questions_array.length; i++){
+            results.push(add_question(params))
+            console.log(results.length)
+            if (results.length === questions_array.length) {
+                console.log(results.length)
+                return results;
+            }
+        };
     }
 
 }
