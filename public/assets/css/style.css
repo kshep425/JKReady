@@ -7,9 +7,21 @@
 #intro_video {
     position: absolute;
     z-index: 1;
+    width:30%;
 }
 
-#yes_help_button{
-    position: absolute;
-    z-index: 2;
+#intro_div {
+    position: relative;
+    display: block;
+    width: 51%;
+    margin-left: 25%;
+    margin-bottom: auto;
+    padding: 20%;
+    overflow: hidden;
 }
+
+.embed-responsive-item {
+    width: 50%    !important;
+    height: auto   !important;
+  }
+
