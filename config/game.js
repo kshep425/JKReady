@@ -13,9 +13,8 @@ const game_obj = [
         wrong_response_2: "Seriously???",
         next_question_id: 2,
         prev_question_id: 1,
-        start_img: "glass_broken_img.png"
+        start_img: "glass_broken_image.png"
     },
-
     {
         id: 2,
         question: `That evil doer widened cracks the roads, we can set the size of the cracks to 0 and that should close them up.
