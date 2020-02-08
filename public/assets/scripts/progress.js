@@ -4,14 +4,17 @@ $(document).ready(function () {
     intro_form.on("submit", function (event) {
         event.preventDefault();
         console.log("Start Game by getting questions")
-
         window.location.replace("/game")
+        playAudio();
     })
+    function play_audio() {
+        var audio = document.getElementById("audio");
+        audio.play();
+    }
 
     $("#correct_answer").click(function (event) {
         event.preventDefault();
         console.log("correct answer clicked");
-
         let next_id = $("#next_question_id").attr("data-next_question_id")
         let response = $("#correct_answer").attr("data-response")
         display_response(response);

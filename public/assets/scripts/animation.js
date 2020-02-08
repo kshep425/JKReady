@@ -1,58 +1,22 @@
-$(document).ready(function () {
-    let animationInterval;
-    // let widthOfSpriteSheet = 168;
-    // let widthOfEachSprite = 56;
+// $(document).ready(function () {
 
-    // function stop_animation() {
-    //     clearInterval(animationInterval);
-    // }
-
-    function villain_start_animation() {
-        let widthOfSpriteSheet = 168;
-        let widthOfEachSprite = 56;
-
-        let position = widthOfEachSprite; //start position for the image
-        let speed = 150; //in millisecond(ms)
-        let diff = widthOfEachSprite; //difference between two sprites
-
-        animationInterval = setInterval(() => {
-            var spriteSheet = document.getElementById("villain-sprite-image");
-
-            //spriteSheet.style.backgroundPosition = `-${position}px 0px`;
-
-            if (position < widthOfSpriteSheet) {
-                position = position + diff;
-            } else {
-                //increment the position by the width of each sprite each time
-                position = widthOfEachSprite;
-            }
-            //reset the position to show first sprite after the last one
-        }, speed);
-    }
-
-    function hero_start_animation() {
-        let widthOfSpriteSheet = 448;
-        let widthOfEachSprite = 56;
-
-        let position = widthOfEachSprite; //start position for the image
-        let speed = 200; //in millisecond(ms)
-        let diff = widthOfEachSprite; //difference between two sprites
-
-        animationInterval = setInterval(() => {
-            var spriteSheet = document.getElementById("hero-sprite-image");
-            //spriteSheet.style.backgroundPosition = `-${position}px 0px`;
-
-            if (position < widthOfSpriteSheet) {
-                position = position + diff;
-            } else {
-                //increment the position by the width of each sprite each time
-                position = widthOfEachSprite;
-            }
-            //reset the position to show first sprite after the last one
-        }, speed);
-    }
-//Start animation
-// villain_start_animation();
-// hero_start_animation();
-
-});
+//     animateScript();
+//     var tID; //we will use this variable to clear the setInterval()
+//     function animateScript() {
+//     var    position = 56; //start position for the image slicer
+//     const  interval = 300; //100 ms of interval for the setInterval()
+//     tID = setInterval ( () => {
+//     document.getElementById("#foxy-fixer-celebrate").style.visibility='visible';
+//     document.getElementById("#foxy-fixer-celebrate").style.backgroundPosition = 
+//     `-${position}px 0px`; 
+//     //we use the ES6 template literal to insert the variable "position"
+//     if (position < 448)
+//     { position = position + 56;}
+//     //we increment the position by 256 each time
+//     else
+//     { position = 56; }
+//     //reset the position to 256px, once position exceeds 1536px
+//     }
+//     , interval ); //end of setInterval
+//     } //end of animateScript()
+// });

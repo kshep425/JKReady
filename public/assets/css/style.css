@@ -20,8 +20,16 @@
     overflow: hidden;
 }
 
-.embed-responsive-item {
-    width: 50%    !important;
-    height: auto   !important;
+.container-login {
+    position: relative;
+    height: 14rem;
+    border: 1px solid;
   }
-
+  
+  .jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color:none;
+    border-radius: .3rem;
+    margin-left: 25%;
+}
