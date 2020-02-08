@@ -2,7 +2,7 @@
     <div class="row">
 
         <div class="col-md-6 demo-content shadow-lg rounded world-container">
-            <img id="world" class="rounded" src="/assets/images/{{start_img}}" />
+            <img id="world" class="rounded" src="/assets/images/{{start_img}}" data-correct="{{correct_img}}"/>
         </div>
 
         <div class="col-md-6 blackboard shadow-lg rounded">
@@ -19,23 +19,32 @@
 
                 <div id="btn_div">
                     <div id="correct_answer">
-                        <button type="button" class="btn btn-outline-outline text-white answers board correct" data-response="{{correct_response}}">
+                        <button type="button" class="btn btn-outline text-white answers board correct"
+                            data-response="{{correct_response}}">
                             {{correct_answer}}
                         </button>
                     </div>
 
                     <div id="option_2">
-                        <button type="button" class="btn btn-outline-outline text-white answers board wrong"
+                        <button type="button" class="btn btn-outline text-white answers board wrong"
                             data-response={{wrong_response_1}}>
                             {{wrong_answer_1}}
                         </button>
                     </div>
 
                     <div id="option_3">
-                        <button type="button" class="btn btn-outline-outline text-white answers board wrong"
+                        <button type="button" class="btn btn-outline text-white answers board wrong"
                             data-response={{wrong_response_2}}>
                             {{wrong_answer_2}}
                         </button>
+                    </div>
+
+                    <div id="high_scores_div" class="hidden">
+                        <a href="/scores">
+                            <button type="button" class="btn btn-outline text-white">
+                                High Scores
+                            </button>
+                        </a>
                     </div>
                 </div>
 
