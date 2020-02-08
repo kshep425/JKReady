@@ -1,38 +1,53 @@
-$(document).ready(function () {
-    let todoInput = document.querySelector("#todo-text");
-    let todoForm = document.querySelector("#todo-form");
-    let todoList = document.querySelector("#todo-list");
-    let todoCountSpan = document.querySelector("#todo-count");
+let todoInput = document.querySelector("#todo-text");
+let todoForm = document.querySelector("#todo-form");
+let todoList = document.querySelector("#todo-list");
+let todoCountSpan = document.querySelector("#todo-count");
 
-    var todos = ["Awesome!", "Great job!"];
+let todos = [];
 
-    render_blog();
+render_comments();
 
-    function render_blog() {
+function render_comments() {
+  // Clear todoList element and update todoCountSpan
+  todoList.innerHTML = "";
+  todoCountSpan.textContent = todos.length;
 
-        todoList.innerHTML = "";
-        todoCountSpan.textContent = todos.length;
+  // Render a new li for each todo
+  for (var i = 0; i < todos.length; i++) {
+    var todo = todos[i];
 
-        // Render a new li for each todo
-        for (var i = 0; i < todos.length; i++) {
-            var todo = todos[i];
+    var li = document.createElement("li");
+    li.textContent = todo;
+    li.setAttribute("data-index", i);
 
-            var li = document.createElement("li");
-            li.textContent = todo;
-            todoList.appendChild(li);
-        }
-    }
+    var button = document.createElement("button");
 
-    // When form is submitted...
-    todoForm.addEventListener("submit", function (event) {
-        event.preventDefault();
 
-        var todoText = todoInput.value.trim();
-        if (todoText === "") {
-            return;
-        }
+    li.appendChild(button);
+    todoList.appendChild(li);
+  }
+}
 
-        todos.push(todoText);
-        todoInput.value = "";
-    })
+todoForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  let todoText = todoInput.value.trim();
+  if (todoText === "") {
+    return;
+  }
+
+  todos.push(todoText);
+  todoInput.value = "";
+  render_comments();
+});
+
+todoList.addEventListener("click", function(event) {
+  var element = event.target;
+
+  if (element.matches("button") === true) {
+
+    var index = element.parentElement.getAttribute("data-index");
+    todos.splice(index, 1);
+    render_comments();
+  }
 });
