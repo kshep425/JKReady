@@ -1,42 +1,7 @@
 $(document).ready(function () {
     let intro_form = $("#intro_form");
 
-    var image = $("#world");
-
-
-    // function fixed_image() {
-    //     console.log(image.src);
-    //     switch (image.src) {
-    //         case "fixed_image_1":
-    //             image.src = "broken_image_2.png"
-    //             break;
-    //         case "fixed_image_2":
-    //             image.src = "fixed_image_3.png"
-    //             break;
-    //         default:
-    //             console.log('No image found');
-    //     }
-    //     console.log(image.src);
-    // }
-
-
-//     if (image.src.match("broken_image_1")) {
-//         image.src = "fixed_image_1";
-//     }
-//     else if (image.src.match("broken_image_2")) {
-//         image.src = "fixed_image_2";
-//     } else
-//         if (image.src.match)
-// }
-// }
-
-
-
-
-    // function pause_next() {
-    //     setTimeout(function () { alert_modal(); }, 3000);
-    // }
-
+    let image = $("#world");
 
     intro_form.on("submit", function (event) {
         event.preventDefault();
@@ -48,39 +13,52 @@ $(document).ready(function () {
     $("#correct_answer").click(function (event) {
         event.preventDefault();
         console.log("correct answer clicked");
-        // cheer_modal();
-        // fixed_image();
+
         let next_id = $("#next_question_id").attr("data-next_question_id")
+        let response = $("#correct_answer").attr("data-response")
+        display_response(response);
         console.log(next_id);
         $.ajax({
             url: "/api/user_data",
             type: 'PUT',
-            data: { ProgressId: next_id || 3 },
+            data: { ProgressId: next_id || 1 },
             success: function () {
-                window.location.replace("/game");
+                $.ajax({
+                    url: "/api/user_score",
+                    type: 'PUT',
+                    data: {
+                        score: 5
+                    }
+                })
+                window.location.replace("/game/" + next_id);
             }
         })
     })
-   $(".wrong").click(function (event) {
+
+    $(".wrong").click(function (event) {
         event.preventDefault();
         console.log($(this))
-        $( ".container" ).effect( "shake", {}, 500, function(){
+
+        $(".container").effect("shake", {}, 500, function () {
             //add sound
             console.log("WRONG ANSWER!!!!")
-        } );
+        });
 
-        if ($(this).attr().includes("wrong")){
-            $( "#world" ).effect( "shake", {}, 500, function(){
-                //add sound
-                console.log("WRONG ANSWER!!!!")
-            } );
-        } else {
-            $("#world").effect("Fade", {}, 1000, function(){
-                console.log("You're Right")
-            })
-        }
-    
-  })
+        let response = $(event.currentTarget).data("response")
+        console.log(response)
+        display_response(response);
+
+
+        $.ajax({
+            url: "/api/user_score",
+            type: 'PUT',
+            data: {
+                score: -2
+            }
+        })
+    })
+
+    function display_response(response){
+        $("#answer_response").text(response)
+    }
 });
-
-
