@@ -97,7 +97,7 @@ $(document).ready(function () {
                 console.log(response)
                 $("p").effect("bounce", {}, 20000).html("<div>You Scored " + response.score + " points<br>Let's see how you did compared to everyone else<div>")
 
-                $("#high_scores_div").show().effect("bounce", {}, 20000);
+                $("#high_scores_div").removeClass("d-none").effect("bounce", {}, 20000);
             })
     }
 });
